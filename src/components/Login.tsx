@@ -116,26 +116,33 @@ const Login: React.FC<Props> = () => {
 
     useEffect(() => {
         const startWebcamCapture = async () => {
+            let cleanup = () => { }; // Create an empty cleanup function
+
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ video: true });
                 if (videoRef.current) {
                     videoRef.current.srcObject = stream;
+                    cleanup = () => {
+                        // Stop the webcam stream in the cleanup function
+                        if (videoRef.current && videoRef.current.srcObject) {
+                            const stream = videoRef.current.srcObject as MediaStream;
+                            stream.getTracks().forEach(track => track.stop());
+                        }
+                    };
                 }
             } catch (error) {
                 console.error('Error accessing webcam:', error);
             }
+
+            // Clean up the webcam stream when the component unmounts
+            return () => {
+                cleanup();
+            };
         };
 
         startWebcamCapture();
-
-        // Clean up the webcam stream when the component unmounts
-        return () => {
-            if (videoRef.current && videoRef.current.srcObject) {
-                const stream = videoRef.current.srcObject as MediaStream;
-                stream.getTracks().forEach(track => track.stop());
-            }
-        };
     }, []);
+
 
     return (
         <Form {...form}>
@@ -225,12 +232,11 @@ const Login: React.FC<Props> = () => {
                 <Button type="button">Login</Button>
 
                 <span className="flex items-center justify-center w-full mx-auto text-slate-600">
-                    Don't have an account?
+                    Don&apos;t have an account?
                     <Link href='/register' className="ml-3 font-semibold">
                         SignUp
                     </Link>
                 </span>
-
 
             </form>
         </Form>
