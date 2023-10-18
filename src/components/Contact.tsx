@@ -14,7 +14,7 @@ const Contact = () => {
                         Contact
                     </h2>
                     <p className='text-slate-600 text-base flex-wrap leading-7 text-center mt-4'>
-                        Something on your mind? Get in touch and let's chat!
+                        Something on your mind? Get in touch and let&apos;s chat!
                     </p>
                     <div className='flex flex-col md:flex-row items-center justify-center w-full space-x-0 md:space-x-6 lg:space-x-12 space-y-5 md:space-y-0 mt-6'>
                         <a href='mailto:team@spartans.com' className='text-slate-500 space-x-3 text-sm hover:text-slate-500'>

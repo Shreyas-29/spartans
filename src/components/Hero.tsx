@@ -37,7 +37,7 @@ const Hero: React.FC<Props> = () => {
                     Experience Seamless Proctoring for Remote Online Exams
                 </h1>
                 <p className="max-w-2xl mx-auto text-base text-center text-slate-600 md:text-lg">
-                    Safeguard your exams from start to finish with our proctoring solution. It's time to trust in online assessments.
+                    Safeguard your exams from start to finish with our proctoring solution. It&apos;s time to trust in online assessments.
                 </p>
                 <div className="flex items-center justify-center space-x-5">
                     <Link href="/create-test">
@@ -51,16 +51,6 @@ const Hero: React.FC<Props> = () => {
                         </Button>
                     </Link>
                 </div>
-                {/* <div className="flex items-center justify-center w-full max-w-lg py-8 mx-auto md:py-16">
-                    <Image
-                        src="/hero.svg"
-                        alt="Hero Image"
-                        width={600}
-                        height={600}
-                        priority
-                        className="w-full h-full drop-shadow-lg"
-                    />
-                </div> */}
                 <div className='mx-auto max-w-6xl px-6 lg:px-8'>
                     <div className='mt-16 flow-root sm:mt-24'>
                         <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
@@ -76,8 +66,6 @@ const Hero: React.FC<Props> = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="absolute hidden rounded-full opacity-30 md:block bg-gradient-to-br from-teal-500 to-white w-96 h-96 top-40 right-1/2 blur-3xl -z-10"></div>
-            <div className="absolute hidden rounded-full opacity-30 md:block bg-gradient-to-br from-purple-500 to-white w-96 h-96 top-80 right-40 blur-3xl -z-10"></div> */}
             <motion.div
                 className="absolute hidden bg-teal-500 rounded-full opacity-20 md:block w-96 h-96 top-40 right-1/2 blur-3xl -z-10"
                 animate={{
